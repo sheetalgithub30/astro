@@ -12,6 +12,7 @@ export default {
       },
       fontFamily:{
         "Sora":'Sora',
+        "Montserrat":'Montserrat'
       }
     },
   },
