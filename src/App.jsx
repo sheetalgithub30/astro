@@ -113,40 +113,11 @@ function App() {
       <div className="relative h-full bg-hero bg-cover bg-center text-white pb-2">
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative">
-          {/* <navbar className="flex justify-between items-center h-24 w-full">
-            <div className="w-full flex justify-center items-center text-2xl font-bold">
-              <img src={name} />
-            </div>
-            <div className="w-full">
-              <ul className="flex justify-evenly font-normal ">
-                <li>
-                  <a href="" className="font-Sora">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="font-Sora">
-                    About
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="font-Sora">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="" className="font-Sora">
-                    Testimonials
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div className="w-full"></div>
-          </navbar> */}
+         
           <Navbar/>
           <div className="my-11">
-            <div className="flex w-[80%] m-auto">
-              <div className="w-[57%] m-auto">
+            <div className="flex w-[80%] m-auto max-md:inline">
+              <div className="w-[57%] m-auto max-md:w-[93%]">
                 <p className="text-lg my-4 font-normal font-Sora">
                   Astrology | Numerology | Vastu | Pooja.
                 </p>
@@ -157,16 +128,16 @@ function App() {
                   Gain clarity, make informed choices, and shape your destiny
                   with trusted advice.
                 </p>
-                <div className="w-[56%] flex justify-between  font-Sora">
+                <div className="w-[56%] flex justify-between  font-Sora max-md:w-[99%] ">
                   <button className="bg-[#F49C36] text-base  p-5 flex justify-center items-center rounded-md focus:outline-none w-[165px] h-[46px]">
                     Book a Session
                   </button>
-                  <button className="bg-transparent border-[1px] font-medium text-[#F49C36] font-Montserrat border-[#F49C36] text-base p-5 flex justify-center items-center rounded-md  focus:outline-none w-[196px] h-[46px]">
+                  <button className="bg-transparent border-[1px] font-medium text-[#F49C36] font-Montserrat border-[#F49C36] text-base p-5 flex justify-center items-center rounded-md  focus:outline-none w-[196px] h-[46px] max-md:w-[170px]">
                     Explore
                   </button>
                 </div>
               </div>
-              <div className="mx-14">
+              <div className="mx-14 max-md:mt-6">
                 <img src={img1}></img>
               </div>
             </div>
@@ -174,22 +145,23 @@ function App() {
         </div>
       </div>
 
+
       {/* About */}
       <div className="h-full mb-14">
         <div className="flex flex-col justify-center items-center my-16">
           <h2 className="text-[32px] font-semibold my-3">About Me</h2>
           <img src={border}></img>
         </div>
-        <div className="flex items-center justify-center w-[80%] m-auto">
-          <div className="">
-            <img src={img2} />
+        <div className="flex items-center justify-center w-[80%] m-auto max-md:inline max-md:w-[90%] ">
+          <div className="flex items-center justify-center">
+            <img src={img2} className="w-[90%]" />
           </div>
-          <div className="w-[50%] m-auto ">
+          <div className="w-[50%] m-auto max-md:w-[80%] max-md:mt-4 ">
 
-            <div className="flex">
-              <img src={HLine} className="mr-10"/>
+            <div className="flex ">
+              <img src={HLine} className="mr-10 max-md:hidden"/>
          
-            <ul className="list-disc text-lg font-normal">
+            <ul className="list-disc text-lg font-normal ">
               <li className="font-Sora ">
                 Respected astrologer with expertise in astrology, numerology,
                 and vastu.
@@ -202,7 +174,7 @@ function App() {
                 Specializes in providing actionable advice that helps improve
                 daily life.
               </li>
-              <li className="  font-Sora">
+              <li className=" font-Sora">
                 Mission: To guide clients on their unique journeys with clarity
                 and direction.
               </li>
@@ -216,7 +188,7 @@ function App() {
                   className="w-14 h-10 absolute top-7 left-4"
                 ></img>
               </div>
-              <div className="mx-5 flex items-center h-10 ">
+              <div className="mx-5 flex items-center h-10">
                 <img src={k} className="w-20 h-10" />
                 <div className="flex flex-col ml-3">
                   <span>number of</span>
@@ -224,9 +196,12 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="flex max-md:justify-center">
+
             <button className="my-4 text-white bg-gradient-to-r from-[#F5A237] to-[#F47836] text-xl font-bold py-2 rounded-lg hover:bg-gradient-to-l focus:outline-none w-48">
               Consult now
             </button>
+            </div>
           </div>
         </div>
       </div>
@@ -237,23 +212,23 @@ function App() {
           <h2 className="text-[32px] font-semibold my-3">Services</h2>
           <img src={border}></img>
         </div>
-        <div className="flex items-center justify-center w-[80%] m-auto">
-          <div className="w-[45%] relative flex justify-center items-center ">
-            <div className="absolute justify-center items-center flex">
-              <img src={E2} className="absolute" />
-              <img src={E1} className="w-[84%]" />
-              <img src={D2} className="absolute left-16 top-0" />
+        <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
+          <div className="w-[45%] relative flex justify-center items-center max-md:w-[80%] max-md:my-60">
+            <div className="absolute justify-center items-center flex max-md:left-10">
+              <img src={E2} className="absolute " />
+              <img src={E1} className="w-[84%] " />
+              <img src={D2} className="absolute left-16 top-0 max-md:left-8" />
 
-              <img src={D1} className="absolute -left-1 top-16" />
-              <img src={D1} className="absolute -right-5" />
-              <img src={D2} className="absolute right-16 bottom-0.5" />
+              <img src={D1} className="absolute -left-1 top-16 max-md:-left-3 " />
+              <img src={D1} className="absolute -right-5 " />
+              <img src={D2} className="absolute right-16 bottom-0.5 max-md:right-8" />
 
               <div className="absolute flex justify-center items-center">
-                <img src={E3} className="w-[84%]" />
+                <img src={E3} className="w-[84%] max-md:w-[54%]" />
               </div>
             </div>
           </div>
-          <div className="w-[55%] m-auto flex flex-wrap">
+          <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-md:w-[99%]">
             {card_data.map((data) => {
               return (
                 <div
@@ -274,7 +249,7 @@ function App() {
 
       {/* Testimonials */}
       <div className="h-full flex flex-col items-center justify-center py-12">
-        <div className="flex flex-col justify-center items-center mt-2 w-[35%]">
+        <div className="flex flex-col justify-center items-center mt-2 w-[35%] max-md:w-[90%]">
           <h2 className="text-[32px] font-semibold my-3">Testimonials</h2>
           <img src={border}></img>
           <p className="leading-4 font-normal text-center p-4 text-sm font-Sora text-[#00000099]">
@@ -292,12 +267,12 @@ function App() {
             h="100%"
             textAlign="start"
           >
-            <Flex alignItems="center" justifyContent="space-between" mt="45px">
-              <Flex w="20%" className="leading-10 text-3xl font-semibold">
+            <Flex alignItems="center" justifyContent="space-between" mt="45px" >
+              <Flex w="20%" className="leading-10 text-3xl font-semibold  max-md:text-2xl">
                 See what my happy clients are saying about their transformative
                 experiences
               </Flex>
-              <Flex w="68%" justifyContent="flex-end">
+              <Flex w={isLargerThan400? "68%": "55%"} justifyContent="flex-end">
                 <Swiper
                   modules={[Autoplay]}
                   spaceBetween={40} // Adjust the spacing between slides if needed
@@ -315,7 +290,7 @@ function App() {
                     clickable: true,
                   }}
                   autoplay={{
-                    delay: 1000, // 5 seconds delay
+                    delay: 3000, // 5 seconds delay
                     disableOnInteraction: true,
                   }}
                 >
@@ -377,35 +352,6 @@ function App() {
           </Flex>
         </Flex>
 
-        {/* <Swiper
-            modules={[Autoplay]}
-            spaceBetween={40}
-            slidesPerView={3}
-            loop={true}
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 3000, disableOnInteraction: true }}
-          >
-            <div className="flex justify-evenly w-[80%]">
-              <div>
-
-              <SwiperSlide>
-                <img src={ss1} className="" />
-              </SwiperSlide>
-              </div>
-              <div>
-
-              <SwiperSlide>
-                <img src={ss2} className="" />
-              </SwiperSlide>
-              </div>
-              <div>
-
-              <SwiperSlide>
-                <img src={ss3} className="" />
-              </SwiperSlide>
-              </div>
-            </div>
-          </Swiper> */}
       </div>
 
       {/* Choose Me */}
@@ -416,13 +362,13 @@ function App() {
             <h2 className="text-[32px] font-semibold my-3">Why Choose Me</h2>
             <img src={borderWhite}></img>
           </div>
-          <div className="flex items-center justify-center w-[100%] m-auto">
+          <div className="flex items-center justify-center w-[100%] m-auto ">
             <div className=" m-auto flex flex-wrap ">
               {Choose_me_data.map((data) => {
                 return (
                   <div
                     key={data.id}
-                    className="border-[1px] border-gray-300 rounded-3xl w-[379px] h-[23rem] p-7  m-3 flex flex-col justify-center items-center text-center"
+                    className="border-[1px] border-gray-300 rounded-3xl w-[379px] h-[23rem] p-7  m-3 flex flex-col justify-center items-center text-center max-md:w-[340px] max-md:p-3"
                   >
                     <img src={circle} className="h-16 w-16" />
                     <p className="font-bold text-2xl my-4">
@@ -436,7 +382,7 @@ function App() {
               })}
             </div>
           </div>
-          <div className="w-[78%] m-auto flex justify-end">
+          <div className="w-[78%] m-auto flex justify-end max-md:justify-center">
             <button className="bg-white text-base font-normal py-2 font-Sora text-black rounded-lg hover:bg-gray-300 focus:outline-none w-48 my-7">
               Book a Session
             </button>
@@ -447,11 +393,11 @@ function App() {
       {/* qna */}
       <div className="relative h-full py-8">
         <div className="">
-          <div className="flex items-center justify-center w-[80%] m-auto border-2 border-white rounded-3xl p-14">
-            <div className="w-[40%] m-auto">
+          <div className="flex items-center justify-center w-[80%] m-auto rounded-3xl p-14 max-md:inline">
+            <div className="w-[40%] m-auto max-md:w-[90%]">
               <img src={astro} />
             </div>
-            <div className="w-[47%] m-auto">
+            <div className="w-[47%] m-auto max-md:w-[90%] max-md:flex max-md:flex-col ">
               <h1 className="text-[40px] font-bold  my-3 text-[#F37435]">
                 Got a Question? Ask Gopal Ji!
               </h1>
