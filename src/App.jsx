@@ -24,7 +24,7 @@ import D1 from "./assets/D1.svg";
 import D2 from "./assets/D2.svg";
 import name from "./assets/Astro Gopal Pandit.svg";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import {
@@ -35,6 +35,7 @@ import {
   FormLabel,
   Input,
   SimpleGrid,
+  Text,
   Textarea,
   useMediaQuery,
 } from "@chakra-ui/react";
@@ -113,8 +114,7 @@ function App() {
       <div className="relative h-full bg-hero bg-cover bg-center text-white pb-2">
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative">
-         
-          <Navbar/>
+          <Navbar />
           <div className="my-11">
             <div className="flex w-[80%] m-auto max-md:inline">
               <div className="w-[57%] m-auto max-md:w-[93%]">
@@ -145,7 +145,6 @@ function App() {
         </div>
       </div>
 
-
       {/* About */}
       <div className="h-full mb-14">
         <div className="flex flex-col justify-center items-center my-16">
@@ -157,28 +156,27 @@ function App() {
             <img src={img2} className="w-[90%]" />
           </div>
           <div className="w-[50%] m-auto max-md:w-[80%] max-md:mt-4 ">
-
             <div className="flex ">
-              <img src={HLine} className="mr-10 max-md:hidden"/>
-         
-            <ul className="list-disc text-lg font-normal ">
-              <li className="font-Sora ">
-                Respected astrologer with expertise in astrology, numerology,
-                and vastu.
-              </li>
-              <li className="  font-Sora">
-                Known for a practical and compassionate approach that combines
-                ancient wisdom with modern insights.
-              </li>
-              <li className="  font-Sora">
-                Specializes in providing actionable advice that helps improve
-                daily life.
-              </li>
-              <li className=" font-Sora">
-                Mission: To guide clients on their unique journeys with clarity
-                and direction.
-              </li>
-            </ul>
+              <img src={HLine} className="mr-10 max-md:hidden" />
+
+              <ul className="list-disc text-lg font-normal ">
+                <li className="font-Sora ">
+                  Respected astrologer with expertise in astrology, numerology,
+                  and vastu.
+                </li>
+                <li className="  font-Sora">
+                  Known for a practical and compassionate approach that combines
+                  ancient wisdom with modern insights.
+                </li>
+                <li className="  font-Sora">
+                  Specializes in providing actionable advice that helps improve
+                  daily life.
+                </li>
+                <li className=" font-Sora">
+                  Mission: To guide clients on their unique journeys with
+                  clarity and direction.
+                </li>
+              </ul>
             </div>
             <div className="flex items-center my-4">
               <div className="relative">
@@ -197,10 +195,9 @@ function App() {
               </div>
             </div>
             <div className="flex max-md:justify-center">
-
-            <button className="my-4 text-white bg-gradient-to-r from-[#F5A237] to-[#F47836] text-xl font-bold py-2 rounded-lg hover:bg-gradient-to-l focus:outline-none w-48">
-              Consult now
-            </button>
+              <button className="my-4 text-white bg-gradient-to-r from-[#F5A237] to-[#F47836] text-xl font-bold py-2 rounded-lg hover:bg-gradient-to-l focus:outline-none w-48">
+                Consult now
+              </button>
             </div>
           </div>
         </div>
@@ -219,9 +216,15 @@ function App() {
               <img src={E1} className="w-[84%] " />
               <img src={D2} className="absolute left-16 top-0 max-md:left-8" />
 
-              <img src={D1} className="absolute -left-1 top-16 max-md:-left-3 " />
+              <img
+                src={D1}
+                className="absolute -left-1 top-16 max-md:-left-3 "
+              />
               <img src={D1} className="absolute -right-5 " />
-              <img src={D2} className="absolute right-16 bottom-0.5 max-md:right-8" />
+              <img
+                src={D2}
+                className="absolute right-16 bottom-0.5 max-md:right-8"
+              />
 
               <div className="absolute flex justify-center items-center">
                 <img src={E3} className="w-[84%] max-md:w-[54%]" />
@@ -267,12 +270,18 @@ function App() {
             h="100%"
             textAlign="start"
           >
-            <Flex alignItems="center" justifyContent="space-between" mt="45px" >
-              <Flex w="20%" className="leading-10 text-3xl font-semibold  max-md:text-2xl">
+            <Flex alignItems="center" justifyContent="space-between" mt="45px">
+              <Flex
+                w="20%"
+                className="leading-10 text-3xl font-semibold  max-md:text-2xl"
+              >
                 See what my happy clients are saying about their transformative
                 experiences
               </Flex>
-              <Flex w={isLargerThan400? "68%": "55%"} justifyContent="flex-end">
+              <Flex
+                w={isLargerThan400 ? "68%" : "55%"}
+                justifyContent="flex-end"
+              >
                 <Swiper
                   modules={[Autoplay]}
                   spaceBetween={40} // Adjust the spacing between slides if needed
@@ -351,10 +360,10 @@ function App() {
             </Flex>
           </Flex>
         </Flex>
-
       </div>
 
       {/* Choose Me */}
+
       <div className="relative h-full bg-hero bg-cover bg-center text-white py-10">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative">
@@ -362,8 +371,9 @@ function App() {
             <h2 className="text-[32px] font-semibold my-3">Why Choose Me</h2>
             <img src={borderWhite}></img>
           </div>
-          <div className="flex items-center justify-center w-[100%] m-auto ">
-            <div className=" m-auto flex flex-wrap ">
+
+          {isLargerThan900 && (
+            <div className="flex items-center justify-center w-[100%] m-auto ">
               {Choose_me_data.map((data) => {
                 return (
                   <div
@@ -371,9 +381,7 @@ function App() {
                     className="border-[1px] border-gray-300 rounded-3xl w-[379px] h-[23rem] p-7  m-3 flex flex-col justify-center items-center text-center max-md:w-[340px] max-md:p-3"
                   >
                     <img src={circle} className="h-16 w-16" />
-                    <p className="font-bold text-2xl my-4">
-                      {data.title}
-                    </p>
+                    <p className="font-bold text-2xl my-4">{data.title}</p>
                     <p className="text-lg font-normal leading-6 font-Sora text-[#E2E2E2] h-28">
                       {data.content}
                     </p>
@@ -381,12 +389,57 @@ function App() {
                 );
               })}
             </div>
-          </div>
-          <div className="w-[78%] m-auto flex justify-end max-md:justify-center">
-            <button className="bg-white text-base font-normal py-2 font-Sora text-black rounded-lg hover:bg-gray-300 focus:outline-none w-48 my-7">
-              Book a Session
-            </button>
-          </div>
+          )}
+
+          {!isLargerThan900 && (
+            <Swiper
+              slidesPerView={"auto"}
+              spaceBetween={10}
+              style={{ width: "100%", marginTop: !isLargerThan900 && "40px" }}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              <SwiperSlide style={{ width: "90%" }}>
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+                  <Image src={circle} />
+                  <Text className="font-bold text-2xl my-4">
+                    Expert Guidance
+                  </Text>
+                  <Text className="text-lg font-normal leading-6 font-Sora text-[#E2E2E2] h-28">
+                    With a deep understanding of cosmic forces, Gopal Krishna
+                    provides tailored insights to help you navigate life’s
+                    biggest decisions.
+                  </Text>
+                </Flex>
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "100%" }}>
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+                  <Image src={circle} />
+                  <Text className="font-bold text-2xl my-4">
+                    Achieve Peace & Success
+                  </Text>
+                  <Text className="text-lg font-normal leading-6 font-Sora text-[#E2E2E2] h-28">
+                    Through his personalized astrology and numerology services,
+                    Gopal has helped countless individuals find peace, success,
+                    and clarity in their personal and professional lives.
+                  </Text>
+                </Flex>
+              </SwiperSlide>
+              <SwiperSlide style={{ width: "90%" }}>
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+                  <Image src={circle} />
+                  <Text className="font-bold text-2xl my-4">
+                    Transform Your Space
+                  </Text>
+                  <Text className="text-lg font-normal leading-6 font-Sora text-[#E2E2E2] h-28">
+                    Optimize your living or working environment with Vastu
+                    consultations, ensuring harmony, prosperity, and balance in
+                    all areas of life.
+                  </Text>
+                </Flex>
+              </SwiperSlide>
+            </Swiper>
+          )}
         </div>
       </div>
 
@@ -410,50 +463,8 @@ function App() {
                 Don’t hesitate! Share your query below and let’s begin the
                 journey.
               </p>
-              {/* <div className="bg-white text-black p-6 my-6 rounded-xl border-[1px] border-gray-400">
-                <form>
-                  <div className="flex flex-col my-2">
-                    <label className="font-Sora font-normal text-sm text-[#00000099]">
-                      Full name
-                    </label>
-                    <input
-                      type="text"
-                      className="border-[1px] border-gray-400 text-2xl"
-                    ></input>
-                  </div>
-                  <div className="flex justify-between my-2">
-                    <div className="flex flex-col w-[48%]">
-                      <label className="font-Sora font-normal text-sm text-[#00000099]">
-                        Phone number
-                      </label>
-                      <input
-                        type="text"
-                        className="border-[1px] border-gray-400 text-2xl"
-                      ></input>
-                    </div>
-                    <div className="flex flex-col w-[48%]">
-                      <label className="font-Sora font-normal text-sm text-[#00000099]">
-                        E-mail ID
-                      </label>
-                      <input
-                        type="email"
-                        className="border-[1px] border-gray-400 text-2xl"
-                      ></input>
-                    </div>
-                  </div>
-                  <div className="flex flex-col my-2">
-                    <label className="font-Sora font-normal text-sm text-[#00000099]">
-                      Message
-                    </label>
-                    <textarea className="border-[1px] border-gray-400 h-32"></textarea>
-                  </div>
-                  <button className="my-4 text-white bg-[#F37435] text-xl font-bold py-2 rounded-lg  focus:outline-none w-full">
-                    Send Message
-                  </button>
-                </form>
-              </div> */}
 
-              <Flex borderRadius="30px" w="100%" bg="white" mt={"1rem"} >
+              <Flex borderRadius="30px" w="100%" bg="white" mt={"1rem"}>
                 <Box
                   w="100%"
                   p={8}
@@ -461,8 +472,8 @@ function App() {
                   bg="white"
                   color="#00000099"
                   borderRadius="30px"
-                   border="1px"
-  borderColor="gray.300"
+                  border="1px"
+                  borderColor="gray.300"
                 >
                   <form
                     onSubmit={(e) => {
@@ -574,7 +585,7 @@ function App() {
           <img src={influcent} />
         </div>
       </div> */}
-      <Footer/>
+      <Footer />
     </>
   );
 }
