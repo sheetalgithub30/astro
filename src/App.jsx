@@ -210,7 +210,7 @@ function App() {
           <img src={border}></img>
         </div>
         <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
-          <div className="w-[45%] relative flex justify-center items-center max-2xl:w-[90%] max-2xl:my-60">
+          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-md:my-60">
             <div className="absolute justify-center items-center flex max-md:left-10">
               <img src={E2} className="absolute " />
               <img src={E1} className="w-[84%] " />
@@ -231,7 +231,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-md:w-[99%]">
+          <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-md:w-[99%] max-md:mt-60">
             {card_data.map((data) => {
               return (
                 <div
