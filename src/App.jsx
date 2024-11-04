@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import img1 from "./assets/Img1.svg";
-import img2 from "./assets/Img2.svg";
+import img1 from "./assets/IMG1.svg";
+import img2 from "./assets/IMG2.svg";
 import border from "./assets/border.svg";
 import borderWhite from "./assets/borderWhite.svg";
 import planetEc from "./assets/planetEc.svg";
