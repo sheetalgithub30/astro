@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import img1 from "./assets/Rectangle 3292.png";
-import img2 from "./assets/Rectangle 3293.png";
+import img1 from "./assets/Img1.svg";
+import img2 from "./assets/Img2.svg";
 import border from "./assets/border.svg";
 import borderWhite from "./assets/borderWhite.svg";
 import planetEc from "./assets/planetEc.svg";
@@ -12,8 +12,7 @@ import k from "./assets/10k.svg";
 import ss1 from "./assets/Screenshot1.png";
 import ss2 from "./assets/Screenshot2.png";
 import ss3 from "./assets/Screenshot3.png";
-import rightArrow from "./assets/rightArrow.png";
-import leftArrow from "./assets/leftArrow.png";
+
 import circle from "./assets/Circle.svg";
 import astro from "./assets/astro.svg";
 import HLine from "./assets/HLine.svg";
@@ -211,7 +210,7 @@ function App() {
           <img src={border}></img>
         </div>
         <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
-          <div className="w-[45%] relative flex justify-center items-center max-md:w-[80%] max-md:my-60">
+          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-sm:my-60">
             <div className="absolute justify-center items-center flex max-md:left-10">
               <img src={E2} className="absolute " />
               <img src={E1} className="w-[84%] " />
@@ -228,7 +227,7 @@ function App() {
               />
 
               <div className="absolute flex justify-center items-center">
-                <img src={E3} className="w-[84%] max-md:w-[54%]" />
+                <img src={E3} className="w-[84%] max-md:w-[66%]" />
               </div>
             </div>
           </div>
