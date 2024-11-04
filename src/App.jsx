@@ -43,6 +43,7 @@ import { Image } from "@chakra-ui/react";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
+
 const card_data = [
   {
     id: 1,
@@ -261,7 +262,7 @@ function App() {
           </p>
         </div>
 
-        <Flex w="100%" id="testimonials" mt={isLargerThan700 ? "1px" : "70px"}>
+        <Flex w="100%" id="testimonials" mt={isLargerThan700 ? "1px" : "70px"} >
           <Flex
             display="flex"
             mx="auto"
@@ -281,9 +282,11 @@ function App() {
               <Flex
                 w={isLargerThan400 ? "68%" : "55%"}
                 justifyContent="flex-end"
+      
               >
                 <Swiper
-                  modules={[Autoplay]}
+                  modules={[Autoplay,Pagination]}
+                  style={{height: "400px"}}
                   spaceBetween={40} // Adjust the spacing between slides if needed
                   slidesPerView={
                     isLargerThan900
@@ -302,6 +305,7 @@ function App() {
                     delay: 3000, // 5 seconds delay
                     disableOnInteraction: true,
                   }}
+            
                 >
                   <SwiperSlide>
                     <Flex
@@ -360,6 +364,7 @@ function App() {
             </Flex>
           </Flex>
         </Flex>
+        
       </div>
 
       {/* Choose Me */}
@@ -399,8 +404,8 @@ function App() {
               modules={[Pagination]}
               className="mySwiper"
             >
-              <SwiperSlide style={{ width: "90%" }}>
-                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+              <SwiperSlide style={{ width: "95%" }}>
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[100%] h-[23rem] p-6  flex flex-col justify-center items-center text-center">
                   <Image src={circle} />
                   <Text className="font-bold text-2xl my-4">
                     Expert Guidance
@@ -413,7 +418,7 @@ function App() {
                 </Flex>
               </SwiperSlide>
               <SwiperSlide style={{ width: "100%" }}>
-                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[100%] h-[23rem] p-6  flex flex-col justify-center items-center text-center">
                   <Image src={circle} />
                   <Text className="font-bold text-2xl my-4">
                     Achieve Peace & Success
@@ -426,7 +431,7 @@ function App() {
                 </Flex>
               </SwiperSlide>
               <SwiperSlide style={{ width: "90%" }}>
-                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-7  flex flex-col justify-center items-center text-center">
+                <Flex className="border-[1px] border-gray-300 rounded-3xl w-[370px] h-[23rem] p-6  flex flex-col justify-center items-center text-center">
                   <Image src={circle} />
                   <Text className="font-bold text-2xl my-4">
                     Transform Your Space
@@ -440,6 +445,13 @@ function App() {
               </SwiperSlide>
             </Swiper>
           )}
+          <div className="flex justify-end w-[89%]">
+          <button className="bg-white text-base font-normal py-2 font-Sora text-black rounded-lg hover:bg-gray-300 focus:outline-none w-48 my-7">
+            Book a Session
+          </button>
+
+          </div>
+
         </div>
       </div>
 
@@ -576,15 +588,6 @@ function App() {
       </div>
 
       {/* footer */}
-      {/* <div className="bg-[#0F1726] text-white flex w-[100%] h-24 justify-around items-center">
-        <div>
-          <p className="my-2 font-bold text-lg">Privacy Policy</p>
-          <p className="my-2 font-bold text-lg">Terms of use</p>
-        </div>
-        <div>
-          <img src={influcent} />
-        </div>
-      </div> */}
       <Footer />
     </>
   );
