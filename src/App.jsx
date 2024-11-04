@@ -210,8 +210,8 @@ function App() {
           <img src={border}></img>
         </div>
         <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
-          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-2xl:my-60">
-            <div className="absolute justify-center items-center flex max-md:left-10">
+          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-md:py-60">
+            <div className="absolute justify-center items-center flex max-md:left-10 max-md:h-[50vh] ">
               <img src={E2} className="absolute " />
               <img src={E1} className="w-[84%] " />
               <img src={D2} className="absolute left-16 top-0 max-md:left-8" />
@@ -231,12 +231,12 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-2xl::w-[99%] max-2xl::mt-60">
+          <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-md:w-[100%] max-md:mt-14">
             {card_data.map((data) => {
               return (
                 <div
                   key={data.id}
-                  className="border-[1px] border-gray-300 rounded-[20px] w-64 h-56 p-4 m-3 flex flex-col justify-center items-center text-center"
+                  className="border-[1px] border-gray-300 rounded-[20px] w-64 h-56 p-4 m-3 flex flex-col justify-center items-center text-center max-md:w-[70%]"
                 >
                   <img src={data.src} className="m-4" />
                   <p className="text-lg font-semibold m-2">{data.title}</p>
