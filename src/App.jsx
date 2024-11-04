@@ -210,8 +210,8 @@ function App() {
           <img src={border}></img>
         </div>
         <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
-          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-md:py-60">
-            <div className="absolute justify-center items-center flex max-md:left-10 max-md:h-[50vh] ">
+          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-md:py-60 max-md:h-[50vh]">
+            <div className="absolute justify-center items-center flex max-md:left-10  ">
               <img src={E2} className="absolute " />
               <img src={E1} className="w-[84%] " />
               <img src={D2} className="absolute left-16 top-0 max-md:left-8" />
