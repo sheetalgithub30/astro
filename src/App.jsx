@@ -266,20 +266,25 @@ function App() {
             display="flex"
             mx="auto"
             flexDir="column"
-            w={isLargerThan1000 ? "70%" : "98%"}
+            w={isLargerThan1000 ? "75%" : "100%"}
             h="100%"
             textAlign="start"
           >
-            <Flex alignItems="center" justifyContent="space-between" mt="45px">
+            <Flex alignItems="center" justifyContent=
+            {isLargerThan1000?"space-evenly":"space-between"}
+             mt={isLargerThan1000 ?"45px":"1px"}
+             className="px-8"
+             >
               <Flex
-                w="20%"
-                className="leading-10 text-3xl font-semibold  max-md:text-2xl"
+               w={isLargerThan1000 ? "20%" : "20%"}
+               h="100%"
+                className="leading-10 text-3xl font-semibold  max-md:text-lg"
               >
                 See what my happy clients are saying about their transformative
                 experiences
               </Flex>
               <Flex
-                w={isLargerThan400 ? "68%" : "55%"}
+                w={isLargerThan400 ? "70%" : "62%"}
                 justifyContent="flex-end"
       
               >
@@ -399,7 +404,7 @@ function App() {
             <Swiper
               slidesPerView={"auto"}
               spaceBetween={10}
-              style={{ width: "100%", marginTop: !isLargerThan900 && "40px" }}
+              style={{ width: "90%", marginTop: !isLargerThan900 && "40px" }}
               modules={[Pagination]}
               className="mySwiper"
             >
