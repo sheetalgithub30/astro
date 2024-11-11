@@ -45,7 +45,7 @@ import Footer from "../components/Footer.jsx";
 import name from "../assets/nameBlack.svg";
 import border from "../assets/border.svg";
 
-import SkeletonCard from "../components/skeletonCard.jsx";
+import SkeletonCard from "../components/SkeletonCard.jsx";
 import serviceImage from "../assets/serviceImage.svg";
 
 const Servicepage = () => {
