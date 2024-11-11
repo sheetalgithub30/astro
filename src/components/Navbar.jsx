@@ -20,12 +20,11 @@ import { useMediaQuery } from '@chakra-ui/react'
 import {  HamburgerIcon } from '@chakra-ui/icons'
 import 'swiper/css';
 import 'swiper/css/pagination';
-import name from "../assets/Astro Gopal Pandit.svg";
 // import { HashLink } from 'react-router-hash-link';
 
 
 
-const Navbar = () => {
+const Navbar = ({color,name}) => {
 //   const Navigate = useNavigate()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
@@ -35,9 +34,9 @@ const Navbar = () => {
   const [isLargerThan700] = useMediaQuery('(min-width: 700px)')
 
   return (
-      <Flex w="100%"  h={isLargerThan700 ? '100px' : "60px"} color="white">
+      <Flex w="100%"  h={isLargerThan700 ? '100px' : "60px"} color={color}>
         <Flex
-          w={isLargerThan1000 ? "85%" : "90%"}
+          w={isLargerThan1000 ? "76%" : "90%"}
           mx="auto"
           display="flex"
           justifyContent="space-between"
@@ -56,9 +55,9 @@ const Navbar = () => {
             justifyContent="space-evenly"
             alignItems="center"
           >
-            <a href=""><Flex className="font-Sora text-base font-normal"  >Home</Flex></a>
+            <Link to={"/"}><Flex className="font-Sora text-base font-normal"  >Home</Flex></Link>
             <a href=""><Flex className="font-Sora text-base font-normal">About</Flex></a>
-            <a href=""><Flex className="font-Sora text-base font-normal" >Services</Flex></a>
+            <Link to={"/services"} ><Flex className="font-Sora text-base font-normal" >Services</Flex></Link>
             <a href=""><Flex className="font-Sora text-base font-normal">Testimonials</Flex></a>
           </Flex>}
           <Flex w={"100%"}>
@@ -91,9 +90,9 @@ const Navbar = () => {
             alignItems="start"
             fontSize={["clamp(14px, 3vw, 16px)"]}
           >
-     <a href=""><Flex  fontSize={["clamp(14px, 2vw, 16px)"]} >Home</Flex></a>
+        <Link to={"/"} ><Flex  fontSize={["clamp(14px, 2vw, 16px)"]} >Home</Flex></Link>
             <a><Flex fontSize={["clamp(14px, 2vw, 16px)"]}>About</Flex></a>
-            <a><Flex  fontSize={["clamp(14px, 2vw, 16px)"]}>Services</Flex></a>
+            <Link to={"/services"} ><Flex  fontSize={["clamp(14px, 2vw, 16px)"]}>Services</Flex></Link>
             <a><Flex fontSize={["clamp(14px, 2vw, 16px)"]}>Testimonials</Flex></a>
           </Flex>
           </DrawerBody>
