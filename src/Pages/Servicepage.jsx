@@ -495,12 +495,11 @@ const ServiceCard = ({
                 justifyContent="flex-end"
                 p={isLargerThan600 ? "20px" : "10px"}
                 position="absolute"
-                w="27%"
+                w={isLargerThan600 ? "27%" : "92%"}
                 
               >
 
                           
-
                 <IconButton
                   isRound={true}
                   variant="solid"
