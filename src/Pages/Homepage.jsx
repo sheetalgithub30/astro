@@ -16,12 +16,8 @@ import ss3 from "../assets/Screenshot3.png";
 import circle from "../assets/Circle.svg";
 import astro from "../assets/astro.svg";
 import HLine from "../assets/HLine.svg";
-import E1 from "../assets/E1.png";
-import E2 from "../assets/E2.svg";
-import E3 from "../assets/E3.svg";
-import D1 from "../assets/D1.svg";
-import D2 from "../assets/D2.svg";
-import name from "../assets/Astro Gopal Pandit.svg"
+import name from "../assets/Astro Gopal Pandit.svg";
+import services from "../assets/services.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -42,7 +38,8 @@ import {
 import { Image } from "@chakra-ui/react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-
+import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 
 const card_data = [
   {
@@ -130,12 +127,16 @@ function Homepage() {
                   with trusted advice.
                 </p>
                 <div className="w-[56%] flex justify-between  font-Sora max-md:w-[99%] ">
+                  <Link to="/services">
                   <button className="bg-[#F49C36] text-base  p-5 flex justify-center items-center rounded-md focus:outline-none w-[165px] h-[46px]">
                     Book a Session
                   </button>
+                  </Link>
+                  <HashLink smooth to="/#about">
                   <button className="bg-transparent border-[1px] font-medium text-[#F49C36] font-Montserrat border-[#F49C36] text-base p-5 flex justify-center items-center rounded-md  focus:outline-none w-[196px] h-[46px] max-md:w-[170px]">
                     Explore
                   </button>
+                  </HashLink>
                 </div>
               </div>
               <div className="mx-14 max-md:mt-6">
@@ -147,7 +148,7 @@ function Homepage() {
       </div>
 
       {/* About */}
-      <div className="h-full mb-14">
+      <div id="about" className="h-full mb-14">
         <div className="flex flex-col justify-center items-center my-16">
           <h2 className="text-[32px] font-semibold my-3">About Me</h2>
           <img src={border}></img>
@@ -196,9 +197,11 @@ function Homepage() {
               </div>
             </div>
             <div className="flex max-md:justify-center">
+            <Link to="/services">
               <button className="my-4 text-white bg-gradient-to-r from-[#F5A237] to-[#F47836] text-xl font-bold py-2 rounded-lg hover:bg-gradient-to-l focus:outline-none w-48">
                 Consult now
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -211,26 +214,8 @@ function Homepage() {
           <img src={border}></img>
         </div>
         <div className="flex items-center justify-center w-[80%] m-auto max-md:inline ">
-          <div className="w-[45%] relative flex justify-center items-center max-md:w-[90%] max-md:py-60 max-md:h-[50vh]">
-            <div className="absolute justify-center items-center flex max-md:left-10  ">
-              <img src={E2} className="absolute " />
-              <img src={E1} className="w-[84%] " />
-              <img src={D2} className="absolute left-16 top-0 max-md:left-8" />
-
-              <img
-                src={D1}
-                className="absolute -left-1 top-16 max-md:-left-3 "
-              />
-              <img src={D1} className="absolute -right-5 " />
-              <img
-                src={D2}
-                className="absolute right-16 bottom-0.5 max-md:right-8"
-              />
-
-              <div className="absolute flex justify-center items-center">
-                <img src={E3} className="w-[84%] max-md:w-[66%]" />
-              </div>
-            </div>
+          <div className="w-[40%] flex justify-center items-center max-md:w-full ">
+            <img src={services} className="w-[90%] h-[90%]" />
           </div>
           <div className="w-[55%] m-auto flex flex-wrap items-center justify-center  max-md:w-[100%] max-md:mt-14">
             {card_data.map((data) => {
@@ -252,7 +237,7 @@ function Homepage() {
       </div>
 
       {/* Testimonials */}
-      <div className="h-full flex flex-col items-center justify-center py-12">
+      <div id="testimonial" className="h-full flex flex-col items-center justify-center py-12">
         <div className="flex flex-col justify-center items-center mt-2 w-[35%] max-md:w-[90%]">
           <h2 className="text-[32px] font-semibold my-3">Testimonials</h2>
           <img src={border}></img>
@@ -262,7 +247,7 @@ function Homepage() {
           </p>
         </div>
 
-        <Flex w="100%" id="testimonials" mt={isLargerThan700 ? "1px" : "70px"} >
+        <Flex w="100%" id="testimonials" mt={isLargerThan700 ? "1px" : "70px"}>
           <Flex
             display="flex"
             mx="auto"
@@ -271,14 +256,17 @@ function Homepage() {
             h="100%"
             textAlign="start"
           >
-            <Flex alignItems="center" justifyContent=
-            {isLargerThan1000?"space-evenly":"space-between"}
-             mt={isLargerThan1000 ?"45px":"1px"}
-             className="px-8"
-             >
+            <Flex
+              alignItems="center"
+              justifyContent={
+                isLargerThan1000 ? "space-evenly" : "space-between"
+              }
+              mt={isLargerThan1000 ? "45px" : "1px"}
+              className="px-8"
+            >
               <Flex
-               w={isLargerThan1000 ? "20%" : "20%"}
-               h="100%"
+                w={isLargerThan1000 ? "20%" : "20%"}
+                h="100%"
                 className="leading-10 text-3xl font-semibold  max-md:text-lg"
               >
                 See what my happy clients are saying about their transformative
@@ -287,11 +275,10 @@ function Homepage() {
               <Flex
                 w={isLargerThan400 ? "70%" : "62%"}
                 justifyContent="flex-end"
-      
               >
                 <Swiper
-                  modules={[Autoplay,Pagination]}
-                  style={{height: "400px"}}
+                  modules={[Autoplay, Pagination]}
+                  style={{ height: "400px" }}
                   spaceBetween={40} // Adjust the spacing between slides if needed
                   slidesPerView={
                     isLargerThan900
@@ -310,7 +297,6 @@ function Homepage() {
                     delay: 3000, // 5 seconds delay
                     disableOnInteraction: true,
                   }}
-            
                 >
                   <SwiperSlide>
                     <Flex
@@ -369,7 +355,6 @@ function Homepage() {
             </Flex>
           </Flex>
         </Flex>
-        
       </div>
 
       {/* Choose Me */}
@@ -451,12 +436,12 @@ function Homepage() {
             </Swiper>
           )}
           <div className="flex justify-end w-[89%]">
-          <button className="bg-white text-base font-normal py-2 font-Sora text-black rounded-lg hover:bg-gray-300 focus:outline-none w-48 my-7">
-            Book a Session
-          </button>
-
+          <Link to="/services">
+            <button className="bg-white text-base font-normal py-2 font-Sora text-black rounded-lg hover:bg-gray-300 focus:outline-none w-48 my-7">
+              Book a Session
+            </button>
+            </Link>
           </div>
-
         </div>
       </div>
 

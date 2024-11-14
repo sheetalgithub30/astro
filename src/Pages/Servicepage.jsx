@@ -44,50 +44,15 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import name from "../assets/nameBlack.svg";
 import border from "../assets/border.svg";
-
-import SkeletonCard from "../components/SkeletonCard.jsx";
 import serviceImage from "../assets/serviceImage.svg";
 
 const Servicepage = () => {
-  //   const [cashfree, setCashfree] = useState(null);
 
-  //   const initializeSDK = async () => {
-  //     const loadedCashfree = await load({ mode: import.meta.env.VITE_PAYMENT_TYPE });
-  //     setCashfree(loadedCashfree);
-  //   };
-
-  //   const { isOpen, onOpen, onClose } = useDisclosure();
-  //   const btnRef = React.useRef();
-  //   const { link, setLink } = useLinkContext();
-  // single media query with no options
   const [isLargerThan1000] = useMediaQuery("(min-width: 1000px)");
   const [isLargerThan900] = useMediaQuery("(min-width: 900px)");
   const [isLargerThan300] = useMediaQuery("(min-width: 300px)");
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
-  const [displayRazorpay, setDisplayRazorpay] = useState(false);
-  //   const {isOpen: isConfirmationModalOpen, onOpen: onConfirmationModalOpen, onClose: onConfirmationModalClose} = useDisclosure()
-
-  //   const {isOpen: isQuestionSendingOpen, onOpen: onQuestionSendingOpen, onClose: onQuestionSendingClose} = useDisclosure()
-  const [eventUrl, setEventUrl] = useState("");
-  const [date, setDate] = useState(null);
-  const [monthRange, setMonthRange] = useState({
-    startDate: null,
-    endDate: null,
-  });
-  const [availableEventsData, setAvailableEventsData] = useState(null);
-  const [availableSlots, setAvailableSlots] = useState(null);
-  const [selectedService, setSelectedService] = useState(null);
-  const [formData, setFormData] = useState({
-    name: "",
-    phoneNumber: "",
-    email: "",
-  });
-  const [q1, setQ1] = useState("");
-  const [q2, setQ2] = useState("");
-  const [q3, setQ3] = useState("");
-
-  const [orderId, setOrderId] = useState(null);
-
+ 
   return (
     <>
       <Navbar color={"black"} name={name} />
@@ -101,7 +66,6 @@ const Servicepage = () => {
         {/* first section */}
         <Flex
           w="100%"
-          // minH={isLargerThan700 ? "800px" : "600px"}
           position="relative"
           justifyContent="center"
           flexDir="column"
@@ -145,17 +109,11 @@ const Servicepage = () => {
                 spacing={isLargerThan900 ? "30px" : "10px"}
                 width="100%"
               >
-                {/* {servicesLoadingState && [1,2,3]?.map((item, index) => (
-                <React.Fragment key={index}>
-                   <SkeletonCard />
-                </React.Fragment>
-              ))} */}
                 {consultationData?.map((item, index) => (
                   <React.Fragment key={index}>
                     <ServiceCard
                       id={item?.id}
                       src={serviceImage}
-                      service={item}
                       title={item?.title}
                       description={item?.desc}
                       mainDescription={item?.maindesc}
@@ -164,30 +122,7 @@ const Servicepage = () => {
                       serviceType={item?.type}
                       howItWorks={item?.howItWorks}
                       details={item?.details}
-                      // planTypes={calendlyEventsData}
-                      type={item?.type}
-                      eventUrl={eventUrl}
-                      setEventUrl={setEventUrl}
-                      date={date}
-                      setDate={setDate}
-                      setMonthRange={setMonthRange}
-                      monthRange={monthRange}
-                      availableEventsData={availableEventsData}
-                      // eventsLoading={calendlyEventsTypesAvailabilityQueryLoading}
-                      setAvailableSlots={setAvailableSlots}
-                      availableSlots={availableSlots}
-                      // _mutationServiceBookingForm={_mutationServiceBookingForm}
-                      formData={formData}
-                      setFormData={setFormData}
-                      setSelectedService={setSelectedService}
-                      selectedService={selectedService}
-                      // paymentButtonLoading={paymentButtonLoading}
-                      setQ1={setQ1}
-                      setQ2={setQ2}
-                      setQ3={setQ3}
-                      q1={q1}
-                      q2={q2}
-                      q3={q3}
+                  
                     />
                   </React.Fragment>
                 ))}
@@ -221,44 +156,23 @@ const Servicepage = () => {
                 spacing={isLargerThan900 ? "30px" : "10px"}
                 width="100%"
               >
-                {/* {servicesLoadingState && [1,2,3]?.map((item, index) => (
-                <React.Fragment key={index}>
-                   <SkeletonCard />
-                </React.Fragment>
-              ))} */}
                 {poojaData?.map((item, index) => (
                   <React.Fragment key={index}>
                     <ServiceCard
                       id={item?.id}
                       src={serviceImage}
-                      service={item}
                       title={item?.title}
                       description={item?.desc}
                       mainDescription={item?.maindesc}
                       price={item?.price}
                       previousPrice={item?.previousPrice}
-                      imageUrl={item?.imageUrl}
                       howItWorks={item?.howItWorks}
                       details={item?.details}
                       serviceType={item?.type}
-                      // planTypes={calendlyEventsData}
-                      type={item?.type}
-                      eventUrl={eventUrl}
-                      setEventUrl={setEventUrl}
-                      date={date}
-                      setDate={setDate}
-                      setMonthRange={setMonthRange}
-                      monthRange={monthRange}
-                      availableEventsData={availableEventsData}
-                      // eventsLoading={calendlyEventsTypesAvailabilityQueryLoading}
-                      setAvailableSlots={setAvailableSlots}
-                      availableSlots={availableSlots}
-                      // _mutationServiceBookingForm={_mutationServiceBookingForm}
-                      formData={formData}
-                      setFormData={setFormData}
-                      setSelectedService={setSelectedService}
-                      selectedService={selectedService}
-                      // paymentButtonLoading={paymentButtonLoading}
+                  
+         
+          
+                     
                     />
                   </React.Fragment>
                 ))}
@@ -270,40 +184,6 @@ const Servicepage = () => {
         {/* footer */}
         <Footer />
 
-        {/* <Modal closeOnOverlayClick={false} isOpen={isConfirmationModalOpen} onClose={onConfirmationModalClose}>
-        <ModalOverlay />
-        <ModalContent borderRadius="20px" >
-          
-          <ModalHeader></ModalHeader>
-          <ModalBody textAlign='center'>
-            <Flex flexDir='column' textAlign='center' px="60px" py="30px">
-             <WarningIcon fontSize="40px" color="#291965" mx="auto"/>
-            <Text fontSize="25px" fontWeight={800}>Booking confirmation!</Text>
-            <Text fontSize="13px" fontWeight={500}>Please do not refresh the page and continue booking event.</Text>
-            </Flex>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button type="ghost" onClick={()=> {setLink(null); onConfirmationModalClose()}} border="1px solid #291965">Already booked</Button>
-            <Button ml="10px" minW="150px"  bg="#291965 !important" colorScheme='blue'onClick={()=> {onConfirmationModalClose(); openCalendlyWidget()}}>
-              Book Event
-            </Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal> */}
-
-        {/* <Modal isCentered closeOnOverlayClick={false}  isOpen={isQuestionSendingOpen} onClose={onQuestionSendingClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalBody>
-            <Flex justify="center" alignItems="center" flexDir='column' >
-             <Image src={starsLoading} mb="40px" />
-            <Text fontSize="20px" fontWeight="800">Sending Questions ....</Text>
-            </Flex>
-          </ModalBody>
-
-        </ModalContent>
-      </Modal> */}
       </Flex>
     </>
   );
@@ -322,160 +202,20 @@ const ServiceCard = ({
   planTypes,
   howItWorks,
   details,
-  type,
-  date,
-  setDate,
-  setMonthRange,
-  monthRange,
-  availableEventsData,
-  eventsLoading,
   eventUrl,
   setEventUrl,
-  setAvailableSlots,
-  availableSlots,
-  _mutationServiceBookingForm,
-  formData,
-  setFormData,
-  service,
-  setSelectedService,
-  selectedService,
+ 
   serviceType,
-  paymentButtonLoading,
-  imageUrl,
-  setQ1,
-  setQ2,
-  setQ3,
-  q1,
-  q2,
-  q3,
+ 
 }) => {
-  const toast = useToast();
-  const navigate = useNavigate(); // Hook for programmatic navigation
-  const { id: idFromParams } = useParams();
+
   const [isLargerThan600] = useMediaQuery("(min-width: 600px)");
   const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [value, setValue] = React.useState(planTypes?.[0]);
-  const [buyPageOpen, setBuyPageOpen] = useState(false);
-  const [qnaPageOpen, setQnaPageOpen] = useState(false);
-  const [planSelectError, setPlanSelectError] = useState(false);
-  const [dateSelectError, setDateSelectError] = useState(false);
-  const [slotSelectError, setSlotSelectError] = useState(false);
+ 
 
-  const [sharableLink, setSharableLink] = useState(
-    `${import.meta.env.VITE_FRONTEND_URL}/services/${id}`
-  );
-  // const sharableLink = `${import.meta.env.VITE_FRONTEND_URL}/${cardDetails.id}`;
-  const { hasCopied, onCopy } = useClipboard(sharableLink);
 
-  const handleShare = () => {
-    onCopy(); // Copies the sharable link to the clipboard
-    toast({
-      title: "Link copied!",
-      description: `Link copied`,
-      status: "success",
-      duration: 3000,
-      isClosable: true,
-    });
-  };
 
-  useEffect(() => {
-    setSharableLink(`${import.meta.env.VITE_FRONTEND_URL}/services/${id}`);
-  }, [id]);
-
-  const enabledDates = availableEventsData?.dates?.map(
-    (date) => new Date(date)
-  );
-
-  // Function to get the start and end dates of the current month
-  const getMonthRange = (date) => {
-    const today = new Date();
-    let startDate;
-
-    if (
-      date.getMonth() === today.getMonth() &&
-      date.getFullYear() === today.getFullYear()
-    ) {
-      // If the selected date is in the current month, start from today
-      startDate = today;
-    } else {
-      // Otherwise, start from the 1st of the selected month
-      startDate = new Date(date.getFullYear(), date.getMonth(), 1);
-    }
-
-    // End date is always the last day of the selected month
-    const endDate = new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-    return { startDate, endDate };
-  };
-
-  // Event handler for month change
-  const handleMonthChange = (date) => {
-    const range = getMonthRange(date);
-    setMonthRange(range);
-  };
-
-  useEffect(() => {
-    if (monthRange.startDate === null) {
-      setMonthRange(getMonthRange(new Date()));
-    }
-  }, []);
-
-  //   useEffect(()=> {
-  //     if(idFromParams === id) {
-  //       onOpen()
-  //     }
-  //   }, [])
-
-  const handleRemoveIdFromUrl = () => {
-    navigate("/services"); // Navigates to the /services page (removes the id from the URL)
-  };
-
-  const _handleQnaForm = () => {
-    _mutationServiceBookingForm(onClose, clearStates);
-  };
-
-  const clearStates = () => {
-    setBuyPageOpen(false);
-    setQnaPageOpen(false);
-  };
-
-  const isDateEnabled = (date) => {
-    return enabledDates?.some(
-      (enabledDate) =>
-        enabledDate.getFullYear() === date.getFullYear() &&
-        enabledDate.getMonth() === date.getMonth() &&
-        enabledDate.getDate() === date.getDate()
-    );
-  };
-
-  const handlePlanSelectError = () => {
-    if (serviceType === "ONE_ON_ONE") {
-      if (eventUrl === "") {
-        setPlanSelectError(true);
-      } else {
-        setPlanSelectError(false);
-        setBuyPageOpen(true);
-      }
-    } else if (serviceType === "QNA") {
-      setQnaPageOpen(true);
-    }
-  };
-
-  const handleServiceBookingForm = () => {
-    if (date === null) {
-      setDateSelectError(true);
-      setSlotSelectError(false);
-      return;
-    } else if (availableSlots === null) {
-      setSlotSelectError(true);
-      setDateSelectError(false);
-      return;
-    }
-    setSlotSelectError(false);
-    setDateSelectError(false);
-    _mutationServiceBookingForm(onClose, clearStates);
-  };
 
   return (
     <Flex
@@ -506,13 +246,8 @@ const ServiceCard = ({
                   colorScheme="blackAlpha"
                   aria-label="Done"
                   fontSize="20px"
-                  onClick={() => handleShare()}
                   icon={
-                    hasCopied ? (
-                      <FaCheck color="white" />
-                    ) : (
                       <IoShareSocialOutline color="white" />
-                    )
                   }
                 />
               </Flex>
@@ -537,14 +272,14 @@ const ServiceCard = ({
           fontWeight="800"
           color="#0D7909"
         >
-          {price}<span className=" font-semibold text-xl p-3 text-[#00000099]">{type==="pooja"?<del>&nbsp;{previousPrice}&nbsp;</del>:""}</span>
+          {price}<span
+          className="  p-3 text-[#00000099]">{serviceType==="pooja"?<del>&nbsp;{previousPrice}&nbsp;</del>:""}</span>
 
         </Text>
         <IconButton
           isRound={true}
           variant="solid"
           onClick={onOpen}
-          //   colorScheme='teal'
           aria-label="Done"
           size={isLargerThan600 ? "lg" : "sm"}
           fontSize="20px"
@@ -560,7 +295,7 @@ const ServiceCard = ({
         isCentered
       >
         <ModalOverlay />
-        {!buyPageOpen && (
+      
           <ModalContent borderRadius="25px">
             <ModalHeader p="0" overflow="hidden" position="relative">
               <Flex
@@ -572,10 +307,6 @@ const ServiceCard = ({
                 <IconButton
                   isRound={true}
                   variant="solid"
-                  onClick={() => {
-                    onClose();
-                    handleRemoveIdFromUrl();
-                  }}
                   colorScheme="blackAlpha"
                   aria-label="Done"
                   fontSize="20px"
@@ -588,13 +319,10 @@ const ServiceCard = ({
                   colorScheme="blackAlpha"
                   aria-label="Done"
                   fontSize="20px"
-                  onClick={() => handleShare()}
                   icon={
-                    hasCopied ? (
-                      <FaCheck color="white" />
-                    ) : (
+                  
                       <IoShareSocialOutline color="white" />
-                    )
+                  
                   }
                 />
               </Flex>
@@ -617,41 +345,8 @@ const ServiceCard = ({
                 >
                   {title}
                 </Text>
-                <Flex my="5px" justifyContent="space-between">
-                  {serviceType === "ONE_ON_ONE" && (
-                    <Text
-                      fontFamily="Montserrat"
-                      fontSize={["clamp(16px, 3.5vw, 18px)"]}
-                      fontWeight="700"
-                    >
-                      Choose a Plan
-                    </Text>
-                  )}
-                  <Flex flexDir="column" alignItems="end">
-                    <RadioGroup onChange={setValue} value={value}>
-                      <Stack direction="row">
-                        {type === "ONE_ON_ONE" &&
-                          planTypes?.map((item, index) => (
-                            <Radio
-                              fontFamily="Montserrat"
-                              key={index}
-                              onClick={() => setEventUrl(item)}
-                              isChecked={item?.eventUrl === eventUrl?.eventUrl}
-                              isDisabled={!item?.active}
-                            >
-                              {item?.duration} mins
-                            </Radio>
-                          ))}
-                      </Stack>
-                    </RadioGroup>
-                    {planSelectError && (
-                      <Text fontSize="12px" color="red.400">
-                        Please select a plan
-                      </Text>
-                    )}
-                  </Flex>
-                </Flex>
-               {type === "consultation" && <>
+                
+               {serviceType === "consultation" && <>
                
                  <Text
                  fontFamily="Montserrat"
@@ -670,7 +365,7 @@ const ServiceCard = ({
                }
 
 
-              {type === "pooja" && <>
+              {serviceType === "pooja" && <>
                 <Flex flexDir="column">
                   <Text
                     fontFamily="Montserrat"
@@ -693,7 +388,7 @@ const ServiceCard = ({
                 </Flex>
               </>}
 
-              {type=== "consultation" && <>
+              {serviceType=== "consultation" && <>
                 <Flex flexDir="column">
                   <Text
                     fontFamily="Montserrat"
@@ -743,15 +438,11 @@ const ServiceCard = ({
                 w="100%"
               >
                 <Text fontSize={["clamp(22px, 3.5vw, 27px)"]} fontWeight="800">
-                  {price}<span className=" font-semibold text-xl p-3 text-[#00000099]">{type==="pooja"?<del>&nbsp;{previousPrice}&nbsp;</del>:""}</span>
+                  {price}<span className=" font-semibold text-xl p-3 text-[#00000099]">{serviceType==="pooja"?<del>&nbsp;{previousPrice}&nbsp;</del>:""}</span>
                 </Text>
                 <Button
                   color="white"
                   minW="100px"
-                  onClick={() => {
-                    handlePlanSelectError();
-                    setSelectedService(service);
-                  }}
                   backgroundColor="#F57937 !important"
                 >
                   Buy
@@ -759,302 +450,8 @@ const ServiceCard = ({
               </Flex>
             </ModalFooter>
           </ModalContent>
-        )}
-        {/* {buyPageOpen && (
-          <ModalContent minH="70vh" minW="fit-content" borderRadius="25px">
-            <ModalHeader
-              fontFamily="Montserrat"
-              p="0"
-              overflow="hidden"
-              borderBottom="1px solid #ccc"
-              position="relative"
-            >
-              <Flex justifyContent="space-between" p={"10px"} w="100%">
-                <IconButton
-                  isRound={true}
-                  variant="solid"
-                  background="white"
-                  aria-label="Done"
-                  fontSize="20px"
-                  onClick={()=> setBuyPageOpen(false)}
-                  icon={<ArrowBackIcon color="#000000" />}
-                />
-                <Flex>
-                  <Text>Contact Information</Text>
-                </Flex>
-                <Flex visibility="hidden">d</Flex>
-              </Flex>
-            </ModalHeader>
+    
 
-            <ModalBody
-              maxW={isLargerThan800 && "800px" }
-              fontFamily="Montserrat"
-              overflow="scroll"
-              p="20px"
-            >
-              <Flex gap="10px" flexDir={isLargerThan800 ? "row" : "column"}>
-                <Flex flexDir="column">
-                  <Flex mb="20px" flexDir="column" >
-                    <Text fontSize="25px" fontWeight={700}>
-                      {title}
-                    </Text>
-                    <Text fontSize="14px">
-                      Audio Call | {eventUrl?.duration} mins
-                    </Text>
-                  </Flex>
-                  <Flex
-                    w={isLargerThan800 ? "100%" : "fit-content"}
-                    justifyContent="center"
-                    flexDir='column'
-                    position='relative'
-                  >
-                     {eventsLoading && <Flex minW="100%" bg="whiteAlpha.800" minH="100%" position='absolute' display="flex" justify="center" alignItems="center" zIndex={9999}>
-                        <Spinner  color="#9681F7" />
-                     </Flex>}
-                     <Text fontSize="13px" fontWeight="600" color={dateSelectError && "red"}>
-                       Please select a date
-                     </Text>
-                    <Calendar
-                      // editableDateInputs={true}
-                      onChange={(date) => setDate(date)}
-                      date={date}
-                      onShownDateChange={handleMonthChange}
-                      disabledDay={(date) => !isDateEnabled(date)}
-                      // dayContentRenderer={dayContentRenderer}
-                      color="#291965"
-                    />
-                  </Flex>
-                  <Flex flexDir="column" gap="10px"  p="10px" position='relative'>
-                  {eventsLoading && <Flex minW="100%" bg="whiteAlpha.800" minH="100%" position='absolute' display="flex" justify="center" alignItems="center" zIndex={9999}>
-                       
-                     </Flex>}
-                     {slotSelectError && <Text fontSize="13px" fontWeight="600" color={"red"}>Please select a Time Slot</Text>}
-                    <Flex gap="5px" maxW="315px" overflow="scroll">
-                      {availableEventsData?.dateByTime
-                        ?.filter(
-                          (item) =>
-                            new Date(item?.date).toDateString() ===
-                            new Date(date).toDateString()
-                        )?.[0]
-                        ?.availableSlots?.map((item, index) => (
-                          <Flex
-                            key={index}
-                            cursor="pointer"
-                            border="2px solid #9a80ff"
-                            padding="5px 15px"
-                            borderRadius="5px"
-                            color={
-                              availableSlots?.time === item?.time
-                                ? "white"
-                                : "black"
-                            }
-                            fontSize="13px"
-                            fontWeight="500"
-                            _hover={{ bg: "#cec3ff" }}
-                            bg={
-                              availableSlots?.time === item?.time
-                                ? "#291965"
-                                : "#eae5ff"
-                            }
-                            onClick={() => setAvailableSlots(item)}
-                          >
-                            {item?.time}
-                          </Flex>
-                        ))}
-                    </Flex>
-                  </Flex>
-                </Flex>
-                <Flex borderLeft={isLargerThan800 && "1px solid #ccc"} pl={isLargerThan800 && "20px"} flexDir="column">
-                  <form onSubmit={(e) => {handleServiceBookingForm(); e.preventDefault()}} style={{display: "flex", flexDirection: "column", gap: "10px"}}>
-                  <Flex flexDir='column' mt="auto" gap="10px" maxW="600px" fontSize="14px" mx="auto">
-                    <FormControl isRequired>
-                      <FormLabel mb="5px" fontSize="14px" fontWeight="500">
-                        Full Name
-                      </FormLabel>
-                      <Input
-                        fontSize="14px"
-                        value={formData?.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        type="text"
-                        placeholder="Enter your full name"
-                      />
-                    </FormControl>
-                    <FormControl isRequired>
-                      <FormLabel mb="5px" fontSize="14px" fontWeight="500">
-                        Phone Number
-                      </FormLabel>
-                      <Input
-                        fontSize="14px"
-                        value={formData?.phoneNumber}
-                        onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}
-                        type="tel"
-                        placeholder="Enter your phone number"
-                      />
-                    </FormControl>
-                    <FormControl isRequired>
-                      <FormLabel mb="5px" fontSize="14px" fontWeight="500">
-                        Email ID
-                      </FormLabel>
-                      <Input
-                        fontSize="14px"
-                        value={formData?.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        type="email"
-                        placeholder="Enter your email address"
-                      />
-                    </FormControl>
-
-                    <UnorderedList
-                      color="gray.700"
-                      fontSize="12px"
-                      fontWeight="600"
-                      mt="20px"
-                    >
-                      <ListItem>Your information is safe with me</ListItem>
-                      <ListItem mt="5px">
-                        This E-mail will used to share the information regarding
-                        your purchase
-                      </ListItem>
-                    </UnorderedList>
-                  </Flex>
-                  <Flex
-                    justifyContent="space-between"
-                    w="100%"
-                    mt="20px"
-                    flexDir="column"
-                  >
-                    <Button
-                      color="white"
-                      minW="100px"
-                      w="100%"
-                      fontSize="12px"
-                      fontWeight="600"
-                      type="submit"
-                      backgroundColor="#271A61 !important"
-                      isLoading={paymentButtonLoading}
-                    >
-                      Pay ₹{price}
-                    </Button>
-                    <Flex
-                      alignItems="center"
-                      gap="10px"
-                      alignSelf="flex-end"
-                      mt="25px"
-                    >
-                      <Image w="12px" src={shieldBlack} />
-                      <Text fontSize="11px" fontWeight="600" color="#00000099">
-                        Powered by
-                      </Text>
-                      <Image height="10px" src={influcentLogoBlack} />
-                    </Flex>
-                  </Flex>
-                  </form>
-                </Flex>
-              </Flex>
-            </ModalBody>
-          </ModalContent>
-        )}
-        {qnaPageOpen && (
-          <ModalContent  minW="fit-content" borderRadius="25px">
-            <ModalHeader
-              fontFamily="Montserrat"
-              p="0"
-              overflow="hidden"
-              borderBottom="1px solid #ccc"
-              position="relative"
-            >
-              <Flex justifyContent="space-between" p={"10px"} w="100%">
-                <IconButton
-                  isRound={true}
-                  variant="solid"
-                  background="white"
-                  aria-label="Done"
-                  fontSize="20px"
-                  onClick={onClose}
-                  icon={<ArrowBackIcon color="#000000" />}
-                />
-                <Flex>
-                  <Text>Contact Information</Text>
-                </Flex>
-                <Flex visibility="hidden">d</Flex>
-              </Flex>
-            </ModalHeader>
-
-            <ModalBody
-              maxW={isLargerThan800 && "800px" }
-              fontFamily="Montserrat"
-              p="20px"
-            >
-              <Flex align="center"  justify="center" flexDir='column' >
-              <Flex mb="20px" flexDir="column" >
-                    <Text fontSize="25px" fontWeight={700}>
-                      {title}
-                    </Text>
-                    <Text fontSize="14px" color="#00000099"  fontWeight={700}>
-                    Q & A | Receive answers on E-mail
-                    </Text>
-                  </Flex>
-      <Box
-        bg="white"
-        rounded="md"
-      >
-        <form onSubmit={e => {e.preventDefault(); _handleQnaForm()}}>
-        <Stack spacing={4}>
-          <FormControl id="fullName">
-            <FormLabel>Full name</FormLabel>
-            <Input value={formData?.name} onChange={(e) => setFormData({...formData, name: e.target.value})} type="text" placeholder="Enter your full name" />
-          </FormControl>
-
-          <Stack direction={{ base: "column", md: "row" }} spacing={4}>
-            <FormControl id="phoneNumber">
-              <FormLabel>Phone number</FormLabel>
-              <Input value={formData?.phoneNumber} onChange={(e) => setFormData({...formData, phoneNumber: e.target.value})}  type="tel" placeholder="Enter your phone number" />
-            </FormControl>
-
-            <FormControl id="emailId">
-              <FormLabel>E-mail ID</FormLabel>
-              <Input value={formData?.email} onChange={(e) => setFormData({...formData, email: e.target.value})}  type="email" placeholder="Enter your e-mail ID" />
-            </FormControl>
-          </Stack>
-
-          <FormControl id="question1">
-            <FormLabel>Question 1</FormLabel>
-            <Input  value={q1} onChange={e=> setQ1(e.target.value)}  type="text" placeholder="Enter your response" />
-          </FormControl>
-
-          <FormControl id="question2">
-            <FormLabel>Question 2</FormLabel>
-            <Input  value={q2} onChange={e=> setQ2(e.target.value)}  type="text" placeholder="Enter your response" />
-          </FormControl>
-
-          <FormControl id="question3">
-            <FormLabel>Question 3</FormLabel>
-            <Input  value={q3} onChange={e=> setQ3(e.target.value)}  type="text" placeholder="Enter your response" />
-          </FormControl>
-
-          <UnorderedList
-                      color="gray.700"
-                      fontSize="12px"
-                      fontWeight="600"
-                      mt="20px"
-                    >
-                      <ListItem>Your information is safe with me</ListItem>
-                      <ListItem mt="5px">
-                        This E-mail will used to share the information regarding
-                        your purchase
-                      </ListItem>
-                    </UnorderedList>
-
-          <Button colorScheme="purple" isLoading={paymentButtonLoading} bg="#291965 !important" type="submit"  mt={6}>
-            Pay ₹ {price}
-          </Button>
-        </Stack>
-        </form>
-      </Box>
-    </Flex>
-            </ModalBody>
-          </ModalContent>
-        )} */}
       </Modal>
     </Flex>
   );

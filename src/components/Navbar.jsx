@@ -20,6 +20,7 @@ import { useMediaQuery } from '@chakra-ui/react'
 import {  HamburgerIcon } from '@chakra-ui/icons'
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { HashLink } from "react-router-hash-link";
 // import { HashLink } from 'react-router-hash-link';
 
 
@@ -56,9 +57,9 @@ const Navbar = ({color,name}) => {
             alignItems="center"
           >
             <Link to={"/"}><Flex className="font-Sora text-base font-normal"  >Home</Flex></Link>
-            <a href=""><Flex className="font-Sora text-base font-normal">About</Flex></a>
+            <HashLink smooth to="/#about"><Flex className="font-Sora text-base font-normal">About</Flex></HashLink>
             <Link to={"/services"} ><Flex className="font-Sora text-base font-normal" >Services</Flex></Link>
-            <a href=""><Flex className="font-Sora text-base font-normal">Testimonials</Flex></a>
+            <HashLink smooth to="/#testimonial"><Flex className="font-Sora text-base font-normal">Testimonials</Flex></HashLink>
           </Flex>}
           <Flex w={"100%"}>
 
@@ -78,7 +79,7 @@ const Navbar = ({color,name}) => {
         <DrawerOverlay />
         <DrawerContent bg='black' color='white'>
           <DrawerCloseButton />
-          <DrawerHeader fontFamily='Cormorant'>Menu</DrawerHeader>
+          <DrawerHeader className="text-base">Menu</DrawerHeader>
 
           <DrawerBody>
           <Flex
@@ -90,10 +91,10 @@ const Navbar = ({color,name}) => {
             alignItems="start"
             fontSize={["clamp(14px, 3vw, 16px)"]}
           >
-        <Link to={"/"} ><Flex  fontSize={["clamp(14px, 2vw, 16px)"]} >Home</Flex></Link>
-            <a><Flex fontSize={["clamp(14px, 2vw, 16px)"]}>About</Flex></a>
-            <Link to={"/services"} ><Flex  fontSize={["clamp(14px, 2vw, 16px)"]}>Services</Flex></Link>
-            <a><Flex fontSize={["clamp(14px, 2vw, 16px)"]}>Testimonials</Flex></a>
+        <Link to={"/"} ><Flex className="font-Sora text-sm font-light" >Home</Flex></Link>
+            <HashLink smooth to="/#about"><Flex className="font-Sora text-sm font-light">About</Flex></HashLink>
+            <Link to={"/services"} ><Flex className="font-Sora text-sm font-light">Services</Flex></Link>
+            <HashLink smooth to="/#testimonial"><Flex className="font-Sora text-sm font-light">Testimonials</Flex></HashLink>
           </Flex>
           </DrawerBody>
 
